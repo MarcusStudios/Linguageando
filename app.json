@@ -17,7 +17,7 @@
     "android": {
       "package": "com.linguageando",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./src/assets/logo.png",
         "backgroundColor": "#ffffff"
       }
     },
