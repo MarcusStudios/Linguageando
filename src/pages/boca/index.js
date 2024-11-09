@@ -16,7 +16,7 @@ export default function Boca({ navigation }) {
     useEffect(() => {
         const loadFont = async () => {
             await Font.loadAsync({
-                'CustomFont': require("../../assets/fonts/JetBrainsMono-Bold.ttf"), // Substitua pelo caminho correto da fonte
+                'CustomFont': require("../../assets/fonts/JetBrainsMono-Bold.ttf"), 
             });
             setFontLoaded(true);
         };
@@ -57,7 +57,7 @@ export default function Boca({ navigation }) {
     };
 
     if (!fontLoaded) {
-        return null; // Exibir um indicador de carregamento, se desejar
+        return null; 
     }
 
     return (
