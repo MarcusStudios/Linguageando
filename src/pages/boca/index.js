@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, FlatList, Image, StyleSheet, Dimensions, TouchableOpacity, Modal, Animated } from 'react-native';
+import { View, Text, FlatList, Image, StyleSheet, Dimensions, TouchableOpacity, Modal, Animated, ScrollView } from 'react-native';
 import * as Font from 'expo-font';
 
 const { width, height } = Dimensions.get('window');
@@ -16,7 +16,7 @@ export default function Boca({ navigation }) {
     useEffect(() => {
         const loadFont = async () => {
             await Font.loadAsync({
-                'CustomFont': require("../../assets/fonts/JetBrainsMono-Bold.ttf"), 
+                'CustomFont': require("../../assets/fonts/JetBrainsMono-Bold.ttf"),
             });
             setFontLoaded(true);
         };
@@ -26,16 +26,18 @@ export default function Boca({ navigation }) {
 
     const loadImages = () => {
         const newImages = [
-            { id: 1, uri: require('../../assets/ms.jpg'), description: 'Descrição da Imagem 1' },
-            { id: 2, uri: require('../../assets/ms.jpg'), description: 'Descrição da Imagem 2' },
-            { id: 3, uri: require('../../assets/ms.jpg'), description: 'Descrição da Imagem 3' },
-            { id: 4, uri: require('../../assets/ms.jpg'), description: 'Descrição da Imagem 4' },
-            { id: 5, uri: require('../../assets/ms.jpg'), description: 'Descrição da Imagem 5' },
-            { id: 6, uri: require('../../assets/ms.jpg'), description: 'Descrição da Imagem 6' },
-            { id: 7, uri: require('../../assets/ms.jpg'), description: 'Descrição da Imagem 7' },
-            { id: 8, uri: require('../../assets/ms.jpg'), description: 'Descrição da Imagem 8' },
+            { id: 1, uri: require('../../assets/ms.jpg'), description: 'Assobios – São sons com intenção de acalmar.' },
+            { id: 2, uri: require('../../assets/103.png'), description: 'O sorriso verdadeiro envolve o músculo zigomático maior, que levanta os cantos da boca, e o músculo orbicular, que enruga a área externa dos olhos (pés de galinha), indicando autenticidade.' },
+            { id: 3, uri: require('../../assets/104.png'), description: 'Sorriso falso - Os cantos da boca só vão até a direção das orelhas e o olhar não tem muita ou nem uma expressão' },
+            { id: 4, uri: require('../../assets/105.png'), description: 'Sorriso risório simulado (social) – Os lábios ficam contidos, apertados um no outro. ' },
+            { id: 5, uri: require('../../assets/106.png'), description: 'Lábios cheios ou normais – Sinal de satisfação ' },
+            { id: 6, uri: require('../../assets/107.png'), description: 'Lábios comprimidos ou desaparecendo – Sinal de estresse' },
+            { id: 7, uri: require('../../assets/109.png'), description: 'Desaparecimento total dos lábios  e cantos da boca voltados para baixo – sinal de pouca confiança emoção frágil e estresse e ansiedade elevadas. ' },
+            { id: 8, uri: require('../../assets/115.png'), description: 'O franzir da testa  e sobrancelhas -  Demonstra ansiedade, tristeza, concentração, preocupação, confusão ou raiva. Nesse caso também deves ser observado o contexto, para perceber sua intenção.' },
             { id: 9, uri: require('../../assets/ms.jpg'), description: 'Descrição da Imagem 9' },
             { id: 10, uri: require('../../assets/ms.jpg'), description: 'Descrição da Imagem 10' },
+
+
         ];
         setImages(newImages);
     };
@@ -56,8 +58,16 @@ export default function Boca({ navigation }) {
         }).start();
     };
 
+    const fadeOut = () => {
+        Animated.timing(fadeAnim, {
+            toValue: 0,
+            duration: 500,
+            useNativeDriver: true,
+        }).start();
+    };
+
     if (!fontLoaded) {
-        return null; 
+        return null;
     }
 
     return (
@@ -86,20 +96,26 @@ export default function Boca({ navigation }) {
                 visible={modalVisible}
                 transparent={true}
                 animationType="fade"
-                onRequestClose={() => setModalVisible(false)}
+                onRequestClose={() => {
+                    setModalVisible(false);
+                    fadeOut();  // Adicionando fadeOut quando o modal é fechado
+                }}
             >
                 <View style={styles.modalContainer}>
                     <TouchableOpacity
                         style={styles.closeButton}
-                        onPress={() => setModalVisible(false)}
+                        onPress={() => {
+                            setModalVisible(false);  // Fechar o modal
+                            fadeOut();  // Animação de saída
+                        }}
                     >
                         <Text style={styles.closeButtonText}>✕</Text>
                     </TouchableOpacity>
 
-                    <View style={styles.modalContent}>
+                    <ScrollView contentContainerStyle={styles.modalScrollContainer}>
                         <Animated.Image source={selectedImage} style={[styles.modalImage, { opacity: fadeAnim }]} />
                         <Text style={[styles.modalText, { fontFamily: 'CustomFont' }]}>{selectedText}</Text>
-                    </View>
+                    </ScrollView>
                 </View>
             </Modal>
         </View>
@@ -145,10 +161,17 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: 'rgba(0, 0, 0, 0.85)',
+        padding: 16,
+        borderRadius: 8,
+        elevation: 20,
+        shadowColor: '#000',
+        shadowOpacity: 0.3,
+        shadowRadius: 6,
     },
-    modalContent: {
+    modalScrollContainer: {
         justifyContent: 'center',
         alignItems: 'center',
+        paddingVertical: 20,
     },
     modalImage: {
         width: width * 0.9,
@@ -165,18 +188,19 @@ const styles = StyleSheet.create({
     },
     closeButton: {
         position: 'absolute',
-        top: 40,
-        left: 20,
+        top: height * 0.03, // Proporcional ao tamanho da tela
+        left: width * 0.05, // Proporcional ao tamanho da tela
         backgroundColor: '#ff5555',
-        width: 40,
-        height: 40,
+        width: width * 0.1, // Tamanho do botão ajustado conforme largura da tela
+        height: width * 0.1, // Tamanho do botão ajustado conforme altura da tela
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 8,
-        elevation: 10,
+        elevation: 20,
         shadowColor: '#000',
         shadowOpacity: 0.3,
         shadowRadius: 6,
+        zIndex: 1,
     },
     closeButtonText: {
         color: '#fff',
