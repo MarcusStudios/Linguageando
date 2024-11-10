@@ -26,7 +26,7 @@ export default function Corpo({ navigation }) {
 
     const loadImages = () => {
         const newImages = [
-            { id: 1, uri: require('../../assets/ms.jpg'), description: 'Descrição da Imagem 1' },
+            { id: 1, uri: require('../../assets/ms.jpg'), description: 'Assobios – São sons com intenção de acalmar.' },
             { id: 2, uri: require('../../assets/ms.jpg'), description: 'Descrição da Imagem 2' },
             { id: 3, uri: require('../../assets/ms.jpg'), description: 'Descrição da Imagem 3' },
             { id: 4, uri: require('../../assets/ms.jpg'), description: 'Descrição da Imagem 4' },
