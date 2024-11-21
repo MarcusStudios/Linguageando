@@ -26,21 +26,16 @@ export default function Boca({ navigation }) {
 
     const loadImages = () => {
         const newImages = [
-            [
-                { id: 1, uri: require('../../assets/103.png'), description: 'O sorriso verdadeiro envolve o músculo zigomático maior, que levanta os cantos da boca, e o músculo orbicular, que enruga a área externa dos olhos (pés de galinha), indicando autenticidade.' },
-                { id: 2, uri: require('../../assets/104.png'), description: 'Sorriso falso - Os cantos da boca só vão até a direção das orelhas e o olhar não tem muita ou nem uma expressão' },
-                { id: 3, uri: require('../../assets/105.png'), description: 'Sorriso risório simulado (social) – Os lábios ficam contidos, apertados um no outro.' },
-                { id: 4, uri: require('../../assets/106.png'), description: 'Lábios cheios ou normais – Sinal de satisfação ' },
-                { id: 5, uri: require('../../assets/107.png'), description: 'Lábios comprimidos ou desaparecendo – Sinal de estresse' },
-                { id: 6, uri: require('../../assets/109.png'), description: 'Desaparecimento total dos lábios e cantos da boca voltados para baixo – sinal de pouca confiança, emoção frágil e estresse e ansiedade elevadas.' },
-                { id: 7, uri: require('../../assets/115.png'), description: 'O franzir da testa e sobrancelhas - Demonstra ansiedade, tristeza, concentração, preocupação, confusão ou raiva. Nesse caso também deves ser observado o contexto, para perceber sua intenção.' },
-                { id: 8, uri: require('../../assets/ms.jpg'), description: 'Descrição da Imagem 8.' },
-                { id: 9, uri: require('../../assets/ms.jpg'), description: 'Descrição da Imagem 9' },
-                { id: 10, uri: require('../../assets/ms.jpg'), description: 'Descrição da Imagem 10' }
-            ]
-            
-            
-
+            { id: 1, uri: require('../../assets/103.png'), description: 'O sorriso verdadeiro envolve o músculo zigomático maior, que levanta os cantos da boca, e o músculo orbicular, que enruga a área externa dos olhos (pés de galinha), indicando autenticidade.' },
+            { id: 2, uri: require('../../assets/104.png'), description: 'Sorriso falso - Os cantos da boca só vão até a direção das orelhas e o olhar não tem muita ou nem uma expressão' },
+            { id: 3, uri: require('../../assets/105.png'), description: 'Sorriso risório simulado (social) – Os lábios ficam contidos, apertados um no outro.' },
+            { id: 4, uri: require('../../assets/106.png'), description: 'Lábios cheios ou normais – Sinal de satisfação ' },
+            { id: 5, uri: require('../../assets/107.png'), description: 'Lábios comprimidos ou desaparecendo – Sinal de estresse' },
+            { id: 6, uri: require('../../assets/109.png'), description: 'Desaparecimento total dos lábios e cantos da boca voltados para baixo – sinal de pouca confiança, emoção frágil e estresse e ansiedade elevadas.' },
+            { id: 7, uri: require('../../assets/115.png'), description: 'O franzir da testa e sobrancelhas - Demonstra ansiedade, tristeza, concentração, preocupação, confusão ou raiva. Nesse caso também deves ser observado o contexto, para perceber sua intenção.' },
+            { id: 8, uri: require('../../assets/110.png'), description: 'Fazer bico com os lábios – Sinal de concordância, mas, tem considerações, ou pode estar rejeitando o que foi dito.' },
+            { id: 9, uri: require('../../assets/112.png'), description: 'Ponta da língua para fora – Sinal de que estamos focados em algo.' },
+            { id: 10, uri: require('../../assets/ms.jpg'), description: 'Descrição da Imagem 10' },
 
         ];
         setImages(newImages);

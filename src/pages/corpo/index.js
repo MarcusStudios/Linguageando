@@ -26,8 +26,8 @@ export default function Corpo({ navigation }) {
 
     const loadImages = () => {
         const newImages = [
-            { id: 1, uri: require('../../assets/ms.jpg'), description: 'Assobios – São sons com intenção de acalmar.' },
-            { id: 2, uri: require('../../assets/ms.jpg'), description: 'Descrição da Imagem 2' },
+            { id: 1, uri: require('../../assets/12.jpg'), description: 'Assobios – São sons com intenção de acalmar.' },
+            { id: 2, uri: require('../../assets/11.png'), description: 'Bocejar – Pode ser uma forma de alívio do estresse e controlar a ansiedade.' },
             { id: 3, uri: require('../../assets/ms.jpg'), description: 'Descrição da Imagem 3' },
             { id: 4, uri: require('../../assets/ms.jpg'), description: 'Descrição da Imagem 4' },
             { id: 5, uri: require('../../assets/ms.jpg'), description: 'Descrição da Imagem 5' },

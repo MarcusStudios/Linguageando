@@ -35,7 +35,7 @@ export default function Tronco({ navigation }) {
             { id: 7, uri: require('../../assets/ms.jpg'), description: 'Descrição da Imagem 7' },
             { id: 8, uri: require('../../assets/ms.jpg'), description: 'Descrição da Imagem 8' },
             { id: 9, uri: require('../../assets/ms.jpg'), description: 'Descrição da Imagem 9' },
-            { id: 10, uri: { uri: 'https://acdn.mitiendanube.com/stores/002/944/067/products/0621c9d811-ab10e21824d7be05b316839030790998-1024-1024.webp' }, description: 'Descrição da Imagem 10' }
+            { id: 10, uri: require('../../assets/ms.jpg'), description: 'Descrição da Imagem 10' },
 
 
         ];
