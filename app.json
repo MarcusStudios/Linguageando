@@ -3,24 +3,6 @@
     "name": "Linguageando",
     "slug": "linguageando",
     "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./src/assets/logo.png",
-    "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./src/assets/logo.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "package": "com.linguageando",
-      "adaptiveIcon": {
-        "foregroundImage": "./src/assets/logo.png",
-        "backgroundColor": "#ffffff"
-      }
-    },
     "web": {
       "favicon": "./assets/favicon.png"
     },
@@ -29,6 +11,9 @@
         "projectId": "40b80341-8956-4d6a-af91-619eb65228c4"
       }
     },
-    "owner": "duduvieira"
+    "owner": "duduvieira",
+    "android": {
+      "package": "com.duduvieira.linguageando"
+    }
   }
 }

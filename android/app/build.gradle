@@ -109,9 +109,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.linguageando'
+    namespace 'com.duduvieira.linguageando'
     defaultConfig {
-        applicationId 'com.linguageando'
+        applicationId 'com.duduvieira.linguageando'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
